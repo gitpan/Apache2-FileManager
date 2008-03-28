@@ -53,20 +53,13 @@ create directory, create file, edit file, and upload files.
 Apache2::FileManager also has the ability to rsync the server htdocs tree to
 another server with the click of a button.
 
+
 =head1 PREREQUISITES
 
 The following (non-core) perl modules must be installed before installing
 Apache2::FileManager.
 
- Apache2::Log
- Apache2::Util
- Apache2::Const
- Apache2::Request
- Apache2::RequestIO
- Apache2::RequestRec
- Apache2::RequestUtil
- Apache2::ServerUtil
- Apache2::Upload
+ Apache/mod_perl => 2.0
  Archive::Any    => 0.03
  CGI::Cookie     => 1.20
  File::NCopy     => 0.32
@@ -85,7 +78,7 @@ The extract functionality only works with *.tar.gz and *.zip files.
 
 =head1 RSYNC FEATURE
 
-To use the rync functionality you must have ssh, rsync, and the File::Rsync 
+To use the rync functionality you must have ssh, rsync, and the L<File::Rsync>
 perl module installed on the development server. You also must have an sshd 
 running on the production server.
 
@@ -199,18 +192,17 @@ the methods to your liking.
 
 =head1 BUGS
 
-There is a bug in File::NCopy that occurs when trying to paste an empty
+There is a bug in L<File::NCopy> that occurs when trying to paste an empty
 directory. The directory is copied but reports back as 0 directories pasted.
 The author is in the process of fixing the problem.
 
 =head1 AUTHOR
 
-Apache::FileManager was written by
+L<Apache::FileManager> was written by
 Philip Collins E<lt>pmc@cpan.orgE<gt>.
 
-Apache2::FileManager was ported to mod_perl2 by
-David Aguilar E<lt>daa@cpan.orgE<gt>.
-
+L<Apache2::FileManager> was adapted for Apache2 by
+David Aguilar E<lt>davvid@cpan.orgE<gt>.
 
 =cut
 
